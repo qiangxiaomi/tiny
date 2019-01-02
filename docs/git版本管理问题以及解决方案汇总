@@ -1,0 +1,18 @@
+
+Problem 1
+   明明在.gitignore中写了相应的忽略规则，但git add命令列表中还是会有未忽略的文件，是什么原因，怎么解决？
+Answer
+   排除规则写错误的情况，原因之一可能是该文件先前已经被提交到了远程仓库，这时候再.gitignore中忽略是没有用的。解决办法是首先在gitignore中定义好
+需要忽略的文件，然后清除本地缓存，再push就不会出现上述情况了。
+   缓存清除命令：
+   git rm -r --cached .
+   git add .
+   git commit -m 'update .gitignore'
+   参考网址：https://www.cnblogs.com/zzcc/p/5695883.html
+
+
+Problem 2
+   在往github上push代码的时候需要输入username和password，但是正确输入之后会提示没有权限
+Answer
+   原因是github增加了校验机制，解决办法：升级git版本为2.16.0以上就ok
+   参考网址：https://blog.csdn.net/qq_17367373/article/details/79412690
