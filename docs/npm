@@ -1,0 +1,15 @@
+一、命令篇
+
+1、清除npm缓存（适用于莫名其妙的npm错误）
+npm cache verify
+npm cache clean
+npm cache clean --force
+npm i -g npm
+
+2、一次全局安装多个包
+npm install -g webpack webpack-cli
+npm uninstall -g webpack webpack-cli
+
+
+3、查看全局安装的包信息
+npm ls --depth=0 -g

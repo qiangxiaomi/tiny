@@ -1,0 +1,35 @@
+一、集成webpack
+    首先当然是建立一个空的文件夹了，cd到该目录下，然后npm init生成一个package.json,package.json中的version字段命名参考以下标准，
+major.minor.patch
+1）major版本号的变更说明新版本产生了不兼容低版本的API等
+2）minor版本号的变更说明你在以向后兼容的方式添加功能
+3）patch版本号的变更说明你在新版本中做了向后兼容的bug修复
+
+初始化完了npm后我们是不是想要马上将它跑起来呢，别急，npm scripts可以帮你轻松实现。首先我们需要建立一个index.js的文件，随便写点东西就行，
+function tiny(string) {
+  if (typeof string !== "string") throw new TypeError("Tiny wants a string!");
+  return string.replace(/\s/g, "");
+};
+console.log(tiny('i am beautiful'))
+
+然后我们想要以命令的方式来运行index.js，怎么办呢，只需要在package.json的scripts字段写上：
+"scripts": {
+    "start": "node index.js"
+  },
+这样就可以通过npm start来启动index.js啦，当然，如果你还想要执行其他的操作，那么就需要研究具体的npm scripts怎么写了。
+
+能跑起来一个文件了，接下来我们就需要将webpack接入我们的项目，还是package.json，不同的是：
+"devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^3.12.0",
+    "webpack-cli": "^3.1.2"
+  },
+
+在devDependencies字段写入我们需要安装的包，注：webpack4以下是不需要安装webpack-cli的，安装成功之后直接运行webpack就会默认去执行webpack.config.js,
+这个文件作为主要打包文件，参考webpack官网编写即可https://www.webpackjs.com/。
+安装完成之后我们在根目录新建src和dist文件夹，src下新建script、style，script下新建main.js,webpack.config,js可以指定入口文件为main.js。
+执行webpack命令后打包完成后在dist中可以找到打包好的bundle.js
+
+二、集成less
+
+
