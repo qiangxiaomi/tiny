@@ -1,5 +1,5 @@
 一、集成webpack
-    首先当然是建立一个空的文件夹了，cd到该目录下，然后npm init生成一个package.json,package.json中的version字段命名参考以下标准，
+    首先是要安装node.js,然后建立一个空的文件夹了，cd到该目录下，然后npm init生成一个package.json,package.json中的version字段命名参考以下标准，
 major.minor.patch
 1）major版本号的变更说明新版本产生了不兼容低版本的API等
 2）minor版本号的变更说明你在以向后兼容的方式添加功能
