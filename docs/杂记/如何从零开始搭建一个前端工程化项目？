@@ -30,6 +30,10 @@ console.log(tiny('i am beautiful'))
 安装完成之后我们在根目录新建src和dist文件夹，src下新建script、style，script下新建main.js,webpack.config,js可以指定入口文件为main.js。
 执行webpack命令后打包完成后在dist中可以找到打包好的bundle.js
 
-二、集成less
+二、集成babel
+    https://juejin.im/post/5b037b536fb9a07aa9260b39
+
+三、集成less
+
 
 
